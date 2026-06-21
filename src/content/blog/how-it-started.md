@@ -15,4 +15,4 @@ I was one of those targets. One day, walking from work to a Caltrain station, a 
 
 Asian hate crimes had always been a thought in the back of my mind. That night, it became my reality. I wanted to share what happened so the people around me would know, too. If someone would casually assault a grown man like me, I worried about how much more vulnerable my neighbors might be — especially women and the elderly.
 
-That worry turned into a question: what if neighbors had one place to share what they were seeing and experiencing? A place where information traveled fast enough to help people look out for one another, support each other, and build a stronger sense of community. That question was the start of my.zip.
+That worry turned into a question: what if neighbors had one place to share what they were seeing and experiencing? A place where information traveled fast enough to help people look out for one another, support each other, and build a stronger sense of community. That question was the start of [my.zip](https://my.zip).
