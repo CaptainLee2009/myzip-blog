@@ -7,7 +7,7 @@ heroImage: '../../assets/neighborhood.jpg'
 
 This is the story behind why we built MyZip.
 
-MyZip is a hyper-local social timeline that shares local information with neighbors. It started from a simple idea.
+MyZip is a hyper-local Agentic Timeline that shares local information with neighbors. It started from a simple idea.
 
 After the pandemic hit the world, the rising death toll and lockdowns affected everyone in every community. But for some communities, the pandemic wasn't the only thing that made daily life dangerous. There was a constant stream of news about Asians being randomly targeted by racially motivated hate crimes.
 
