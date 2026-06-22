@@ -9,7 +9,7 @@ Today we are opening MyZip to our first wave of alpha testers.
 
 ## What is MyZip?
 
-MyZip is a hyper-local Agentic Timeline. You see posts, questions, events, and updates from people in your ZIP code — and only your ZIP code. No algorithm deciding what is relevant. Just your neighborhood, in chronological order.
+MyZip is a Hyper-local Agentic Timeline. You see posts, questions, events, and updates from people in your ZIP code — and only your ZIP code. No algorithm deciding what is relevant. Just your neighborhood, in chronological order.
 
 You navigate to a ZIP code like [my.zip/us/95129](https://my.zip/us/95129) and see everything happening there. You can post text, ask questions, share local photos, and follow threads from your neighbors.
 
