@@ -6,16 +6,28 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+	slug?: string;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, category, ctaZip } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, ctaZip, slug } = Astro.props;
 const targetZip = ctaZip || '94107';
+const ogImagePath = slug ? `/og/${slug}.png` : '/og/default.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} image={heroImage} ogType="article" />
+		<BaseHead
+			title={title}
+			description={description}
+			image={heroImage}
+			ogImagePath={ogImagePath}
+			ogType={slug ? 'article' : 'website'}
+			pubDate={pubDate}
+			updatedDate={updatedDate}
+			category={category}
+		/>
 	</head>
 
 	<body>
@@ -63,13 +75,14 @@ const targetZip = ctaZip || '94107';
 					<div class="cta-actions">
 						<a
 							class="btn-primary"
-							href={`https://my.zip/us/${targetZip}/events`}
-							target="_blank"
-							rel="noopener"
+							href={`https://my.zip/us/${targetZip}/events?s=share&utm_source=blog&utm_medium=story_cta`}
 						>
 							Browse {targetZip} Events &rarr;
 						</a>
-						<a class="btn-secondary" href="https://my.zip/us/94102/events" target="_blank" rel="noopener">
+						<a
+							class="btn-secondary"
+							href="https://my.zip/us/94102/events?s=share&utm_source=blog&utm_medium=story_cta"
+						>
 							SF 94102
 						</a>
 						<button type="button" class="btn-secondary" id="copy-story-link">Copy link</button>
