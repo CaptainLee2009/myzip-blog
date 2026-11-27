@@ -1,66 +1,109 @@
 ---
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+	<nav aria-label="Primary">
+		<a href="/" class="brand">
+			<span class="brand-mark" aria-hidden="true">M</span>
+			<span class="brand-name">MyZip</span>
+			<span class="brand-pill">Blog</span>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/blog">Stories</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://github.com/CaptainLee2009/myzip-blog" target="_blank">
-				<span class="sr-only">MyZip Blog on GitHub</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
+		<div class="header-actions">
+			<a class="btn-primary nav-cta" href="https://my.zip/us/94107" target="_blank" rel="noopener">
+				Open my.zip <span aria-hidden="true">&rarr;</span>
 			</a>
 		</div>
 	</nav>
 </header>
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		background: color-mix(in srgb, var(--bg) 88%, transparent);
+		backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--border);
 	}
 	nav {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 0.75rem 1.25rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 1rem;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
 		text-decoration: none;
+		color: var(--ink);
+		font-weight: 700;
+		font-size: 1.05rem;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	.brand-mark {
+		width: 28px;
+		height: 28px;
+		border-radius: 8px;
+		background: var(--accent);
+		color: #ffffff;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.9rem;
+		font-weight: 700;
 	}
-	.social-links,
-	.social-links a {
+	.brand-pill {
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		padding: 0.12rem 0.5rem;
+		border-radius: 999px;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		color: var(--ink-subtle);
+	}
+	.internal-links {
 		display: flex;
+		align-items: center;
+		gap: 0.25rem;
 	}
-	@media (max-width: 720px) {
-		.social-links {
+	.internal-links :global(a) {
+		padding: 0.4rem 0.75rem;
+		border-radius: 8px;
+		color: var(--ink-muted);
+		text-decoration: none;
+		font-size: 0.94rem;
+		font-weight: 700;
+		transition: color 0.15s ease, background 0.15s ease;
+	}
+	.internal-links :global(a:hover) {
+		color: var(--ink);
+		background: var(--surface);
+	}
+	.internal-links :global(a.active) {
+		color: var(--accent);
+		background: var(--accent-soft);
+	}
+	.nav-cta {
+		padding: 0.45rem 0.95rem;
+		font-size: 0.86rem;
+		white-space: nowrap;
+	}
+	@media (max-width: 640px) {
+		nav {
+			padding: 0.65rem 1rem;
+		}
+		.brand-pill,
+		.header-actions {
 			display: none;
 		}
 	}
